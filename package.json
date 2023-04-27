@@ -1,0 +1,103 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "index.ftd",
+  "name": "FTD",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#punctuation"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.ftd",
+          "match": "//.*"
+        },
+        {
+          "name": "comment.block.ftd",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.ftd",
+          "match": "\\b(if|else|for|while|break|continue)\\b"
+        },
+        {
+          "name": "keyword.type.ftd",
+          "match": "\\b(int|float|bool|string|void)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.ftd",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.ftd",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.ftd",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.ftd",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.integer.ftd",
+          "match": "\\b\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.float.ftd",
+          "match": "\\b\\d+\\.\\d+\\b"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.separator.ftd",
+          "match": "[,;]"
+        },
+        {
+          "name": "punctuation.bracket.ftd",
+          "match": "[\\[\\](){}]"
+        },
+        {
+          "name": "punctuation.operator.ftd",
+          "match": "[+\\-*/=]"
+        }
+      ]
+    }
+  }
+}
